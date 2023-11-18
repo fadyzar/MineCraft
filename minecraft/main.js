@@ -2,6 +2,7 @@ const matrixInput = document.getElementById("matrix-size");
 const acceptButton = document.querySelector(".accept-button");
 const boardContainer = document.querySelector(".board-container");
 const currentColor = document.querySelector("span");
+const startPage = document.querySelector(".start-page");
 
 //color tool selectors
 const groundColorTool = document.querySelector(".ground-color")
@@ -13,6 +14,8 @@ const treeColorTool = document.querySelector(".tree-color")
 const cloudColoeTool = document.querySelector(".cloud-color")
 const whiteColorTool = document.querySelector(".white-color")
 const stoneColorTool = document.querySelector(".stone-color")
+const body = document.querySelector('body')
+const tools = document.querySelector('.tools-container')
 
 
 let selectedColor = "white-color"
@@ -20,7 +23,10 @@ let selectedColor = "white-color"
 
 
 const initGame = () => {
-   
+   startPage.style.display = "none"
+   body.style.backgroundImage = "none"
+   tools.style.display = "block"
+
     boardContainer.innerHTML = "";
     for (let i = 0; i < 22; i++) {
         const row = addRow();
